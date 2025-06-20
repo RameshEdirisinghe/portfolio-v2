@@ -5,7 +5,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
 
@@ -18,27 +17,25 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: <Mail className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Email',
       value: 'ramesh.edirisinghe@email.com',
       link: 'mailto:ramesh.edirisinghe@email.com'
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: <Phone className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Phone',
       value: '+94 77 123 4567',
       link: 'tel:+94771234567'
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
+      icon: <MapPin className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Location',
       value: 'Colombo, Sri Lanka',
       link: 'https://maps.google.com/?q=Colombo,Sri Lanka'
@@ -50,65 +47,74 @@ const Contact = () => {
       icon: <Linkedin className="w-5 h-5" />,
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/ramesh-edirisinghe',
-      color: 'hover:text-blue-500'
+      color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <Github className="w-5 h-5" />,
       name: 'GitHub',
       url: 'https://github.com/ramesh-edirisinghe',
-      color: 'hover:text-gray-300'
+      color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <Twitter className="w-5 h-5" />,
       name: 'Twitter',
       url: 'https://twitter.com/ramesh_dev',
-      color: 'hover:text-blue-400'
+      color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
       name: 'WhatsApp',
       url: 'https://wa.me/94771234567',
-      color: 'hover:text-green-500'
+      color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     }
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gray-300/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-slate-300/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gray-400/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Get In <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Touch</span>
+            Get In <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent animate-gradient">Touch</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Let's connect for projects, collaborations, or a quick tech chat
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
-              <p className="text-gray-300 mb-8">
-                Whether you have a project in mind, want to collaborate, or just want to say hello, 
-                feel free to reach out. I'm always excited to connect with fellow developers and potential clients.
+              <h3 className="text-2xl font-bold mb-4 text-white">Connect With Me</h3>
+              <p className="text-gray-300">
+                Reach out for opportunities or to discuss innovative ideas. I'm all ears!
               </p>
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <a 
+                <a
                   key={index}
                   href={info.link}
-                  className="flex items-center space-x-4 p-4 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group"
+                  className="flex items-center space-x-3 p-4 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl hover:border-gray-400/50 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 group"
                 >
-                  <div className="text-blue-400 group-hover:text-blue-300 transition-colors duration-200">
+                  <div className="p-2 bg-sky-800/40 rounded-lg group-hover:bg-sky-800/60 transition-colors">
                     {info.icon}
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">{info.title}</h4>
-                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-200">
+                    <p className="text-gray-300 group-hover:bg-gradient-to-r group-hover:from-sky-800 group-hover:to-slate-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
                       {info.value}
                     </p>
                   </div>
@@ -118,7 +124,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold mb-4 text-white">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -126,7 +132,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-gray-900/50 rounded-lg border border-gray-700 hover:border-blue-500/50 text-gray-400 ${social.color} transition-all duration-300 transform hover:scale-110`}
+                    className={`p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 ${social.color} transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10`}
                     title={social.name}
                   >
                     {social.icon}
@@ -137,15 +143,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
-            <h3 className="text-2xl font-bold mb-6">Send Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl p-8 rounded-2xl border border-slate-800/50">
+            <h3 className="text-2xl font-bold mb-6 text-white">Send a Message</h3>
+
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Your Name
-                  </label>
                   <input
                     type="text"
                     id="name"
@@ -153,15 +156,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
-                    placeholder="John Doe"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-800 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                    placeholder="Your Name"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
-                  </label>
                   <input
                     type="email"
                     id="email"
@@ -169,55 +169,47 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
-                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-800 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                    placeholder="Your Email"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
-                  placeholder="Project Collaboration"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200 resize-none"
-                  placeholder="Tell me about your project or just say hello..."
+                  rows={4}
+                  className="w-full px-4 py-3 bg-slate-800/50 border border-slate-800 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200 resize-none"
+                  placeholder="Your Message..."
                 />
               </div>
 
               <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center space-x-2"
+                onClick={handleSubmit}
+                className="w-full bg-gradient-to-r from-sky-800 to-slate-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10 flex items-center justify-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span>Send Message</span>
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
     </section>
   );
 };

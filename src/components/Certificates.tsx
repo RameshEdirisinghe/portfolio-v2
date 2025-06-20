@@ -72,43 +72,56 @@ const Certificates = () => {
   ];
 
   return (
-    <section id="certificates" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="certificates" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gray-300/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-slate-300/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gray-400/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Certifications & <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Achievements</span>
+            Certifications & <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent animate-gradient">Achievements</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional certifications that validate my expertise and commitment to continuous learning
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Credentials that showcase my expertise and dedication to lifelong learning
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert) => (
-            <div key={cert.id} className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group">
+            <div
+              key={cert.id}
+              className="bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl overflow-hidden hover:border-gray-400/50 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 group"
+            >
               <div className="relative overflow-hidden">
-                <img 
-                  src={cert.image} 
+                <img
+                  src={cert.image}
                   alt={cert.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 bg-blue-600/90 text-white p-2 rounded-full">
-                  <Award className="w-5 h-5" />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-sky-800 to-slate-500 p-2 rounded-full">
+                  <Award className="w-5 h-5 text-white" />
                 </div>
               </div>
-              
+
               <div className="p-6">
-                <h3 className="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors duration-200">
+                <h3 className="text-lg font-bold mb-2 text-white group-hover:bg-gradient-to-r from-sky-800 to-slate-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
                   {cert.title}
                 </h3>
-                
+
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center space-x-2 text-gray-400">
-                    <Building className="w-4 h-4" />
+                  <div className="flex items-center space-x-2 text-gray-300">
+                    <Building className="w-4 h-4 group-hover:scale-110 transition-transform" />
                     <span className="text-sm">{cert.issuer}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-400">
-                    <Calendar className="w-4 h-4" />
+                  <div className="flex items-center space-x-2 text-gray-300">
+                    <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
                     <span className="text-sm">{cert.date}</span>
                   </div>
                 </div>
@@ -120,15 +133,15 @@ const Certificates = () => {
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-1">
                     {cert.skills.slice(0, 3).map((skill, index) => (
-                      <span 
+                      <span
                         key={index}
-                        className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs"
+                        className="px-2 py-1 bg-sky-800/40 text-gray-300 rounded text-xs group-hover:bg-sky-800/60 transition-colors"
                       >
                         {skill}
                       </span>
                     ))}
                     {cert.skills.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">
+                      <span className="px-2 py-1 bg-slate-800/40 text-gray-300 rounded text-xs group-hover:bg-slate-800/60 transition-colors">
                         +{cert.skills.length - 3}
                       </span>
                     )}
@@ -136,14 +149,14 @@ const Certificates = () => {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-gray-400">
                     ID: {cert.credentialId}
                   </span>
-                  <a 
+                  <a
                     href={cert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors duration-200"
+                    className="flex items-center space-x-1 text-gray-300 hover:bg-gradient-to-r from-sky-800 to-slate-500 hover:bg-clip-text hover:text-transparent transition-colors duration-200"
                   >
                     <span className="text-sm">Verify</span>
                     <ExternalLink className="w-3 h-3" />
@@ -156,24 +169,35 @@ const Certificates = () => {
 
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">6+</div>
-            <div className="text-gray-400">Certifications</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">6+</div>
+            <div className="text-gray-300">Certifications</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">15+</div>
-            <div className="text-gray-400">Skills Validated</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">15+</div>
+            <div className="text-gray-300">Skills Validated</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">100%</div>
-            <div className="text-gray-400">Pass Rate</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">100%</div>
+            <div className="text-gray-300">Pass Rate</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">2024</div>
-            <div className="text-gray-400">Recent Achievement</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">2024</div>
+            <div className="text-gray-300">Recent Achievement</div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
     </section>
   );
 };

@@ -84,13 +84,23 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gray-300/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-slate-300/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gray-400/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Featured <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent animate-gradient">Projects</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             A showcase of my recent work and personal projects that demonstrate my skills and passion for development
           </p>
         </div>
@@ -99,7 +109,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group cursor-pointer"
+              className="bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl overflow-hidden hover:border-gray-400/50 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 group cursor-pointer"
               onClick={() => openModal(project)}
             >
               <div className="relative overflow-hidden">
@@ -108,14 +118,14 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors duration-200">
+                <h3 className="text-xl font-semibold mb-2 text-white group-hover:bg-gradient-to-r from-sky-800 to-slate-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4 line-clamp-2">
+                <p className="text-gray-300 mb-4 line-clamp-2">
                   {project.description}
                 </p>
                 
@@ -123,13 +133,13 @@ const Projects = () => {
                   {project.technologies.slice(0, 3).map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+                      className="px-3 py-1 bg-sky-800/40 text-gray-300 rounded-full text-sm group-hover:bg-sky-800/60 transition-colors duration-200"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+                    <span className="px-3 py-1 bg-slate-800/40Text-gray-300 rounded-full text-sm group-hover:bg-slate-800/60 transition-colors duration-200">
                       +{project.technologies.length - 3}
                     </span>
                   )}
@@ -139,7 +149,7 @@ const Projects = () => {
                   <a 
                     href={project.github}
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     <Github className="w-4 h-4" />
                     <span>Code</span>
@@ -147,7 +157,7 @@ const Projects = () => {
                   <a 
                     href={project.live}
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                    className="flex items-center space-x-2 text-gray-300 hover:bg-gradient-to-r from-sky-800 to-slate-500 hover:bg-clip-text hover:text-transparent transition-colors duration-200"
                   >
                     <ExternalLink className="w-4 h-4" />
                     <span>Live</span>
@@ -161,31 +171,31 @@ const Projects = () => {
         {/* Project Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               <div className="relative">
                 <img 
                   src={selectedProject.image} 
                   alt={selectedProject.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover rounded-t-2xl"
                 />
                 <button 
                   onClick={closeModal}
-                  className="absolute top-4 right-4 bg-gray-900/80 text-white p-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
+                  className="absolute top-4 right-4 bg-slate-900/80 text-white p-2 rounded-full hover:bg-slate-800 transition-colors duration-200"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
               
               <div className="p-8">
-                <h3 className="text-3xl font-bold mb-4">{selectedProject.title}</h3>
+                <h3 className="text-3xl font-bold mb-4 text-white">{selectedProject.title}</h3>
                 <p className="text-gray-300 text-lg mb-6">{selectedProject.longDescription}</p>
                 
                 <div className="mb-6">
-                  <h4 className="text-xl font-semibold mb-3">Key Features</h4>
+                  <h4 className="text-xl font-semibold mb-3 text-white">Key Features</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {selectedProject.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-gradient-to-r from-sky-800 to-slate-500 rounded-full"></div>
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -193,12 +203,12 @@ const Projects = () => {
                 </div>
                 
                 <div className="mb-6">
-                  <h4 className="text-xl font-semibold mb-3">Technologies Used</h4>
+                  <h4 className="text-xl font-semibold mb-3 text-white">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => (
                       <span 
                         key={index}
-                        className="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full"
+                        className="px-4 py-2 bg-sky-800/40 text-gray-300 rounded-full"
                       >
                         {tech}
                       </span>
@@ -209,14 +219,14 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a 
                     href={selectedProject.github}
-                    className="flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                    className="flex items-center space-x-2 bg-slate-800/50 hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-colors duration-200"
                   >
                     <Github className="w-5 h-5" />
                     <span>View Code</span>
                   </a>
                   <a 
                     href={selectedProject.live}
-                    className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-200"
+                    className="flex items-center space-x-2 bg-gradient-to-r from-sky-800 to-slate-500 text-white px-6 py-3 rounded-lg transition-colors duration-200 hover:shadow-lg hover:shadow-white/10"
                   >
                     <ExternalLink className="w-5 h-5" />
                     <span>Live Demo</span>
@@ -227,6 +237,17 @@ const Projects = () => {
           </div>
         )}
       </div>
+
+      <style>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
     </section>
   );
 };

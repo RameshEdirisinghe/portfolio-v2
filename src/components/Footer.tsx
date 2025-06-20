@@ -1,46 +1,117 @@
 import React from 'react';
-import { Heart, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Mock data (to be updated by you)
+  const personalData = {
+    firstName: 'Ramesh',
+    fullName: 'Ramesh Edirisinghe',
+    location: 'Colombo, Sri Lanka',
+    email: 'ramesh.edirisinghe@email.com',
+    phone: '+94 77 123 4567',
+    socialLinks: {
+      github: 'https://github.com/ramesh-edirisinghe',
+      linkedin: 'https://linkedin.com/in/ramesh-edirisinghe'
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 border-t border-gray-700 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          {/* Left side - Copyright */}
-          <div className="flex items-center space-x-2 text-gray-400">
-            <span>&copy; {currentYear} Ramesh Edirisinghe. All rights reserved.</span>
-          </div>
+    <footer className="relative bg-slate-950 border-t border-slate-800/50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
-          {/* Center - Made with love */}
-          <div className="flex items-center space-x-2 text-gray-400">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-            <span>and</span>
-            <Code className="w-4 h-4 text-blue-400" />
-            <span>by Ramesh</span>
-          </div>
-
-          {/* Right side - Back to top */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center space-x-1"
-          >
-            <span>Back to top</span>
-            <div className="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center hover:border-white transition-colors duration-200">
-              <div className="w-2 h-2 border-t border-r border-gray-400 transform rotate-[-45deg] translate-y-0.5 hover:border-white transition-colors duration-200"></div>
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid md:grid-cols-3 gap-8 mb-8 items-start">
+          {/* Left Column - Brand */}
+          <div className="space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="text-2xl font-bold text-white">
+              {personalData.firstName}
+              <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent">.</span>
             </div>
-          </button>
+            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
+              Software Engineer crafting scalable, modern solutions with a passion for innovation and continuous learning.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href={personalData.socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href={personalData.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href={`mailto:${personalData.email}`}
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Middle Column - Quick Links */}
+          <div className="space-y-4 flex flex-col items-center md:items-center">
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+            <div className="space-y-2">
+              {['About', 'Skills', 'Projects', 'Certificates', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => {
+                    const element = document.querySelector(`#${item.toLowerCase()}`);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="block text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Contact Info */}
+          <div className="space-y-4 flex flex-col items-center md:items-end text-center md:text-right">
+            <div className="pt-4">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="group flex items-center space-x-2 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg px-4 py-2 text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
+              >
+                <span>Return to Top</span>
+                <ArrowUp className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom section */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-sm">
-            Built with React, TypeScript, and Tailwind CSS • Designed for performance and accessibility
+        {/* Bottom Section */}
+        <div className="border-t border-slate-800/50 pt-8 text-center">
+          <p className="text-gray-400 text-xs">
+            © {currentYear} {personalData.fullName}. All rights reserved.
           </p>
         </div>
       </div>
+
+      <style>{`
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
     </footer>
   );
 };
