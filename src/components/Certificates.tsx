@@ -1,73 +1,78 @@
-import React from 'react';
 import { Award, ExternalLink, Calendar, Building } from 'lucide-react';
+import python from '../assets/python.jpg';
+import react from '../assets/react.jpg';
+import typeScript from '../assets/TypeScript.png';
+import blockChain from '../assets/blockChain_page-0001.jpg';
+import genAi from '../assets/gen-ai_page-0001.jpg';
+import devOps from '../assets/devopspdf_page-0001.jpg';
 
 const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: 'AWS Certified Developer - Associate',
-      issuer: 'Amazon Web Services',
-      date: 'March 2024',
-      credentialId: 'AWS-DEV-2024-001',
-      image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
-      verifyUrl: 'https://aws.amazon.com/certification/verify',
-      description: 'Demonstrated proficiency in developing and maintaining applications on AWS platform with best practices.',
-      skills: ['AWS Lambda', 'DynamoDB', 'API Gateway', 'CloudFormation', 'S3']
+      title: 'Python for Beginners',
+      issuer: 'University of Moratuwa',
+      date: 'January 2024',
+      credentialId: 'N4HYt4INNI',
+      image: python,
+      verifyUrl: 'https://open.uom.lk/lms/mod/customcert/view.php?id=675&downloadown=1',
+      description: 'Completed an introductory course on Python programming, covering fundamental concepts and practical applications.',
+      skills: ['Python Basics', 'Control Structures', 'Functions', 'File I/O', 'Problem Solving']
     },
     {
       id: 2,
-      title: 'Meta Front-End Developer Professional Certificate',
-      issuer: 'Meta (Facebook)',
-      date: 'January 2024',
-      credentialId: 'META-FE-2024-002',
-      image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=800',
-      verifyUrl: 'https://coursera.org/verify',
-      description: 'Comprehensive program covering modern front-end development practices and React ecosystem.',
-      skills: ['React', 'JavaScript', 'HTML/CSS', 'Figma', 'Git']
+      title: 'React BootCamp',
+      issuer: 'LetsUpgrade',
+      date: 'February 2025',
+      credentialId: 'LUERJSFEB1251642',
+      image: react,
+      verifyUrl: 'https://lnkd.in/gD8uCzCR',
+      description: 'Completed a hands-on React BootCamp covering hooks, state management, component design, and responsive UI development.',
+      skills: ['React.js', 'Hooks & Components', 'State Management', 'Responsive Design']
     },
     {
       id: 3,
-      title: 'Google Cloud Professional Cloud Architect',
-      issuer: 'Google Cloud',
-      date: 'December 2023',
+      title: 'TypeScript for JavaScript Developers',
+      issuer: 'Linkedin Learning',
+      date: 'May 2025',
       credentialId: 'GCP-ARCH-2023-003',
-      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      verifyUrl: 'https://cloud.google.com/certification/verify',
-      description: 'Expertise in designing, developing, and managing robust, secure, scalable, and dynamic solutions.',
-      skills: ['GCP Services', 'Kubernetes', 'Cloud Architecture', 'DevOps', 'Security']
+      image: typeScript,
+      verifyUrl: 'https://www.linkedin.com/learning/certificates/9fec4fd05246b0489a4d45cf6b69d6badb0aecab0591910180d655cd8ff5ad4b',
+      description: 'Enhanced JavaScript skills with TypeScript by learning static typing, interfaces, and modern language features for better code quality.',
+      skills: ['TypeScript Syntax', 'Static Typing', 'Interfaces & Generics', 'Object-Oriented Programming', 'Code Refactoring']
     },
     {
       id: 4,
-      title: 'MongoDB Certified Developer',
-      issuer: 'MongoDB Inc.',
-      date: 'November 2023',
-      credentialId: 'MONGO-DEV-2023-004',
-      image: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800',
-      verifyUrl: 'https://university.mongodb.com/verify_certificate',
-      description: 'Proficiency in MongoDB database design, development, and optimization techniques.',
-      skills: ['MongoDB', 'Aggregation', 'Indexing', 'Schema Design', 'Performance']
+      title: 'Blockchain Basics',
+      issuer: 'LinkedIn Learning',
+      date: 'June 2025',
+      credentialId: '',
+      image: blockChain,
+      verifyUrl: 'https://lnkd.in/gtk_C5bn',
+      description: 'Gained foundational knowledge of blockchain technology, including decentralized systems, smart contracts, and distributed ledger principles.',
+      skills: ['Blockchain Fundamentals', 'Smart Contracts', 'Distributed Ledger', 'Decentralization', 'Cryptographic Hashing']
     },
     {
       id: 5,
-      title: 'Docker Certified Associate',
-      issuer: 'Docker Inc.',
-      date: 'October 2023',
-      credentialId: 'DOCKER-DCA-2023-005',
-      image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
-      verifyUrl: 'https://docker.com/certification/verify',
-      description: 'Comprehensive understanding of Docker containerization and orchestration technologies.',
-      skills: ['Docker', 'Containerization', 'Docker Compose', 'Swarm', 'CI/CD']
+      title: 'Generative AI',
+      issuer: 'LinkedIn Learning',
+      date: 'May 2025',
+      credentialId: '',
+      image: genAi,
+      verifyUrl: 'https://www.linkedin.com/learning/certificates/2ec33fc3f570be1953015857987512a2a294a753aa4bc2a608bc55dde6030687?trk=share_certificate',
+      description: 'Developed a deep understanding of generative AI concepts, models, and applications, including creative AI solutions and ethical considerations.',
+      skills: ['Generative Models', 'Neural Networks', 'Deep Learning', 'Ethics in AI']
     },
     {
       id: 6,
-      title: 'Certified Ethical Hacker (CEH)',
-      issuer: 'EC-Council',
-      date: 'September 2023',
-      credentialId: 'CEH-2023-006',
-      image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Fundamentals of DevOps',
+      issuer: 'KodeKloud',
+      date: 'February 2025',
+      credentialId: '',
+      image: devOps,
       verifyUrl: 'https://aspen.eccouncil.org/VerifyUser',
-      description: 'Knowledge of security vulnerabilities, attack vectors, and defensive countermeasures.',
-      skills: ['Penetration Testing', 'Network Security', 'Web Security', 'Social Engineering', 'Forensics']
+      description: 'Learned core DevOps principles and collaboration techniques to improve software delivery.',
+      skills: ['CI/CD', 'Automation', 'Infrastructure as Code', 'Monitoring', 'Collaboration']
     }
   ];
 

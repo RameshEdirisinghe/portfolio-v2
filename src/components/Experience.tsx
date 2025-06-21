@@ -10,7 +10,7 @@ const Experience = () => {
       location: 'Colombo, Sri Lanka',
       duration: 'Jun 2025 - Present',
       type: 'Full-time',
-      technologies: ['React', 'Node.js', 'Fire Base', 'MongoDB', 'AWS']
+      technologies: ['React', 'Node.js','Express js', 'Fire Base', 'MongoDB', 'AWS']
     },
     {
       id: 2,
