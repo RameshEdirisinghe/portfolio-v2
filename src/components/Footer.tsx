@@ -31,7 +31,7 @@ const Footer = () => {
               <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent">.</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
-              Software Engineer crafting scalable, modern solutions with a passion for innovation and continuous learning.
+              Final-year software engineering undergraduate with a passion for full-stack development, AI, and system design. Known for being hardworking, self-driven, and committed to building scalable, impactful digital solutions
             </p>
             <div className="flex space-x-4">
               <a
