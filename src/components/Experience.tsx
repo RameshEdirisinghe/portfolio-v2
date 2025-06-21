@@ -5,40 +5,31 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      position: 'Junior Software Engineer',
-      company: 'TechCorp Solutions',
+      position: 'Intern Software Engineer',
+      company: 'Residue Solutions',
       location: 'Colombo, Sri Lanka',
-      duration: 'Jan 2024 - Present',
+      duration: 'Jun 2025 - Present',
       type: 'Full-time',
-      technologies: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'AWS']
+      technologies: ['React', 'Node.js', 'Fire Base', 'MongoDB', 'AWS']
     },
     {
       id: 2,
-      position: 'Software Development Intern',
-      company: 'InnovateX',
-      location: 'Kandy, Sri Lanka',
-      duration: 'Jun 2023 - Dec 2023',
-      type: 'Internship',
-      technologies: ['React Native', 'Python', 'Django', 'PostgreSQL', 'Docker']
+      position: 'React Developer Intern',
+      company: 'Technocraft Solutions',
+      location: 'Kurunegala, Sri Lanka',
+      duration: 'May 2025 - Jun 2025',
+      type: 'Part-time',
+      technologies: ['React', 'Redux', 'Express js']
     },
     {
       id: 3,
-      position: 'Freelance Web Developer',
-      company: 'Self-employed',
-      location: 'Remote',
-      duration: 'Jan 2023 - May 2023',
-      type: 'Freelance',
-      technologies: ['WordPress', 'PHP', 'JavaScript', 'CSS3', 'MySQL']
+      position: 'Trainee Software Developer',
+      company: 'Icet',
+      location: 'Pandura, Sri Lanka',
+      duration: 'Jul 2024 - May 2025',
+      type: 'Full-time',
+      technologies: ['Spring-Boot', 'Angular Js','Flutter','Node.js', 'Java', 'Js','MySQL','Tailwind CSS']
     },
-    {
-      id: 4,
-      position: 'Research Assistant',
-      company: 'University of Moratuwa',
-      location: 'Moratuwa, Sri Lanka',
-      duration: 'Sep 2022 - Dec 2022',
-      type: 'Part-time',
-      technologies: ['Python', 'TensorFlow', 'Pandas', 'NumPy', 'Jupyter']
-    }
   ];
 
   return (

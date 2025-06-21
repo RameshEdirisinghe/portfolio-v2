@@ -183,7 +183,7 @@ const Projects = () => {
       image: camping,
       technologies: ['Three.js', 'React.js', 'TailwindCSS'],
       github: 'https://github.com/RameshEdirisinghe/3d-camping.git',
-      live: 'https://www.linkedin.com/posts/ramesh-edirisinghe_threejs-reactjs-tailwindcss-activity-7295195406953586688-RU-i?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
+      Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_threejs-reactjs-tailwindcss-activity-7295195406953586688-RU-i?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
       longDescription: 'This project brings the outdoor adventure experience to the web with a 3D virtual camping environment. It merges creative design with real-time rendering to simulate a relaxing and explorative digital nature space.',
       features: [
         '3D Web Environment',
