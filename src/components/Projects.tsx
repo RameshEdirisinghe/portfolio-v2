@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github, X } from 'lucide-react';
 import kafka from '../assets/kfka.jpg';
 import career from '../assets/career-connect.jpg';
@@ -6,6 +6,12 @@ import movie from '../assets/movie.jpg';
 import mos from '../assets/mos-burger.jpg';
 import iot from '../assets/iot.jpg';
 import shelby from '../assets/shelby.jpg';
+import cafe from '../assets/cafe.jpg';
+import camping from '../assets/camping.jpg';
+import android from '../assets/android.jpg';
+import ai from '../assets/ai.jpg';
+import tik from '../assets/tic-tac-toe.jpg';
+import hr from '../assets/Hr.jpg';
 
 type Project = {
   id: number;
@@ -22,6 +28,7 @@ type Project = {
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [visibleCount, setVisibleCount] = useState(3); // Default to 3 for mobile
 
   const projects: Project[] = [
     {
@@ -64,7 +71,7 @@ const Projects = () => {
       id: 3,
       title: 'Kafka Microservices Project',
       description: 'A real-time event-driven microservices architecture using Apache Kafka and Spring Boot.',
-      image: kafka, 
+      image: kafka,
       technologies: ['Apache Kafka', 'Spring Boot', 'Java', 'REST API'],
       github: 'https://github.com/RameshEdirisinghe/Kafka-Consumer-with-SpringBoot.git',
       Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_apachekafka-realtimedata-eventdrivenarchitecture-activity-7307576480190935041-PRbK?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
@@ -84,7 +91,7 @@ const Projects = () => {
       description: 'A full-stack burger ordering platform with authentication, and AWS integration.',
       image: mos,
       technologies: ['Spring Boot', 'AngularJS', 'AWS S3', 'Tailwind CSS', 'MySQL', 'Hibernate'],
-      github: 'https://github.com/RameshEdirisinghe/MOS-BURGER-FRONTEND-ANGULAR.git',
+      github: 'https://github.com/RameshEdirisinghe/MOS-BURGERS-FULL-PROJECT.git',
       Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_springboot-angularjs-tailwindcss-activity-7304747284414496768-6oQR?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
       longDescription: 'Mos Burger is a full-stack web application built to manage burger orders and user data with clean layered architecture. The app features AWS S3 integration for secure image uploads, MySQL with Hibernate for database management, and AngularJS with OAuth for user authentication and dynamic navigation.',
       features: [
@@ -116,12 +123,12 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: 'Shelby Threads ',
+      title: 'Shelby Threads',
       description: 'A stylish, secure, and scalable POS system for clothing stores',
       image: shelby,
-      technologies: ['JavaFX','Hibernate', 'JasperReports', 'Java',  'MySQL', 'Email API'],
+      technologies: ['JavaFX', 'Hibernate', 'JasperReports', 'Java', 'MySQL', 'Email API'],
       github: 'https://github.com/RameshEdirisinghe/ClothiFy---JavaFx.git',
-      Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_java-javafx-advancedjava-activity-7296652525573656576-6niI?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4', 
+      Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_java-javafx-advancedjava-activity-7296652525573656576-6niI?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
       longDescription: 'Shelby Threads is a JavaFX-based Point of Sale system tailored for clothing store management, themed after Peaky Blinders. It features layered architecture, secure authentication, catalog image handling, and advanced reporting capabilities using JasperReports. Built with Hibernate and MySQL, the system also supports email-based password recovery and PDF bill printing.',
       features: [
         'Layered Architecture & Dependency Injection',
@@ -133,9 +140,117 @@ const Projects = () => {
         'PDF Bill Printing',
         'Executable File for Deployment'
       ]
+    },
+    {
+      id: 7,
+      title: 'Word Guessing Game',
+      description: 'A fun android app that challenges users to guess hidden words letter by letter.',
+      image: android,
+      technologies: ['Java', 'Kotlin', 'Android Studio'],
+      github: 'https://github.com/RameshEdirisinghe/Word-Play-Game.git',
+      live: '',
+      longDescription: 'A mobile word game built as part of the Mobile Application module at the University of Moratuwa. Features include dynamic word generation, score tracking, adjustable difficulty levels, and a clean, intuitive UI to ensure a rewarding gameplay experience.',
+      features: [
+        'Dynamic Word Selection',
+        'Interactive Gameplay',
+        'Customizable Difficulty Levels',
+        'Score Tracking System',
+        'Responsive & Clean UI Design'
+      ]
+    },
+    {
+      id: 8,
+      title: 'Espresso Junction',
+      description: 'A web-based system to manage café operations, orders, and billing.',
+      image: cafe,
+      technologies: ['PHP', 'JavaScript', 'Bootstrap','HTML', 'CSS',  'MySQL'],
+      github: 'https://github.com/RameshEdirisinghe/Espresso-Junction---Cafe-Management-System.git',
+      Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_softwaredevelopment-cafemanagementsystem-activity-7273421452354154496-FCRP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
+      longDescription: 'Espresso Junction is a full-featured café management web app that streamlines customer orders, admin management, and billing. Developed for the Programming Project Module at the University of Moratuwa, it connects to a MySQL database via XAMPP for efficient data handling.',
+      features: [
+        'Order Management',
+        'Customer Billing System',
+        'Responsive UI Design',
+        'Admin Dashboard',
+        'Database Integration with MySQL',
+        'Clean UX for Café Operations'
+      ]
+    },
+    {
+      id: 9,
+      title: '3D Virtual Camping Experience',
+      description: 'A web-based 3D immersive environment recreating the essence of outdoor camping.',
+      image: camping,
+      technologies: ['Three.js', 'React.js', 'TailwindCSS'],
+      github: 'https://github.com/RameshEdirisinghe/3d-camping.git',
+      live: 'https://www.linkedin.com/posts/ramesh-edirisinghe_threejs-reactjs-tailwindcss-activity-7295195406953586688-RU-i?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
+      longDescription: 'This project brings the outdoor adventure experience to the web with a 3D virtual camping environment. It merges creative design with real-time rendering to simulate a relaxing and explorative digital nature space.',
+      features: [
+        '3D Web Environment',
+        'Real-Time Rendering',
+        'Interactive User Experience',
+        'Responsive Layouts',
+        'Nature-Inspired Visuals'
+      ]
+    },
+    {
+      id: 10,
+      title: 'HR Management System',
+      description: 'A full-stack HR platform to manage employees, roles, attendance, and leave requests.',
+      image: hr,
+      technologies: ['Spring Boot', 'AngularJS', 'Tailwind CSS', 'MySQL'],
+      github: 'https://github.com/RameshEdirisinghe/Fortium-Partners-HR-Management-System-Frontend.git',
+      live: '',
+      longDescription: 'A comprehensive Human Resource Management System designed for streamlined employee administration. Built using Spring Boot and AngularJS with TailwindCSS for responsive design. Includes features like role-based access, employee CRUD, attendance tracking, and leave management.',
+      features: [
+        'Employee CRUD Operations',
+        'Role-Based Access Control',
+        'Attendance Tracking System',
+        'Leave Management Workflow',
+        'Responsive Admin Dashboard',
+        'Spring Boot + AngularJS Integration'
+      ]
+    },
+    {
+      id: 11,
+      title: 'AI Chatbot',
+      description: 'A sleek and fast AI chatbot with Markdown rendering and Google AI Studio integration.',
+      image: ai,
+      technologies: ['JavaScript', 'Google AI Studio'],
+      github: 'https://github.com/RameshEdirisinghe/Ai-chat-Bot.git',
+      Demo: 'https://www.linkedin.com/posts/ramesh-edirisinghe_proud-to-present-my-ai-chatbot-project-activity-7275601478096928768-V97_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD__kyQB7jIbZPDt6CKA_7J1Qlx_Nh-Cmc4',
+      longDescription: 'An intelligent chatbot interface built with modern front-end technologies and integrated with Google AI Studio. It supports Markdown syntax for enhanced interactivity and offers a responsive, dark-themed UI.',
+      features: [
+        'Google AI Integration',
+        'Markdown Support',
+        'Responsive Design',
+        'Custom Dark Theme',
+        'Fast and Lightweight Interaction'
+      ]
+    },
+    {
+      id: 12,
+      title: 'Tic-Tac-Toe Game',
+      description: 'A simple and interactive React-based Tic-Tac-Toe game.',
+      image: tik,
+      technologies: ['React.js', 'JavaScript'],
+      github: 'https://github.com/RameshEdirisinghe/Tic-Tac-Toe-React.git',
+      live: '',
+      longDescription: 'A lightweight game that introduces core React principles like useState, conditional rendering, and win detection logic. Designed for beginner-level practice in React.',
+      features: [
+        'Turn-Based Logic',
+        'Win Condition Detection',
+        'State Management with useState',
+        'Clean Component-Based Structure'
+      ]
     }
-
   ];
+
+  // Set initial visible count based on screen size
+  useEffect(() => {
+    const isPC = window.innerWidth >= 1024; // Tailwind 'lg' breakpoint
+    setVisibleCount(isPC ? 6 : 3);
+  }, []);
 
   const openModal = (project: Project) => {
     setSelectedProject(project);
@@ -145,6 +260,10 @@ const Projects = () => {
   const closeModal = () => {
     setSelectedProject(null);
     document.body.style.overflow = 'unset';
+  };
+
+  const loadMore = () => {
+    setVisibleCount(projects.length);
   };
 
   return (
@@ -170,7 +289,7 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.slice(0, visibleCount).map((project) => (
             <div 
               key={project.id} 
               className="bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl overflow-hidden hover:border-gray-400/50 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 group cursor-pointer"
@@ -249,6 +368,18 @@ const Projects = () => {
           ))}
         </div>
 
+        {visibleCount < projects.length && (
+          <div className="text-center mt-12">
+            <button
+              onClick={loadMore}
+              className="border border-cyan-600/90 bg-transparent hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10"
+              aria-label="Load more projects"
+            >
+              Load More
+            </button>
+          </div>
+        )}
+
         {/* Project Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -286,7 +417,7 @@ const Projects = () => {
                 <div className="mb-6">
                   <h4 className="text-xl font-semibold mb-3 text-white">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedProject.technologies.map((tech, index) => (
+                    {selectedProject.technologies.map((tech: string, index: number) => (
                       <span 
                         key={index}
                         className="px-4 py-2 bg-sky-800/40 text-gray-300 rounded-full"

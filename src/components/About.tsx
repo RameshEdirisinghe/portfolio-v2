@@ -16,7 +16,7 @@ const About = () => {
       </div>
 
       {/* Minimal grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -84,14 +84,14 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <button className="group relative bg-cyan-700/10 hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2">
+              <button className="group relative bg-cyan-700/30  hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2">
                 <Download className="w-5 h-5 group-hover:animate-pulse" />
                 <span>Download Resume</span>
               </button>
 
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative border border-cyan-600/30 bg-transparent hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2"
+                className="group relative border border-cyan-600/60 bg-transparent hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2"
               >
                 <span>Let's Connect</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
