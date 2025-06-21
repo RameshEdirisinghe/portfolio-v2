@@ -1,5 +1,6 @@
-import { Download, MapPin, GraduationCap, Briefcase, ArrowRight, Sparkles, Github, Linkedin, Phone } from 'lucide-react';
+import { Download, MapPin, GraduationCap, Briefcase, ArrowRight, Sparkles, Github, Linkedin } from 'lucide-react';
 import profilePic from '../assets/myImg.jpg';
+import resume from '../assets/Ramesh-Edirisinghe-CV-Jun-2025.pdf';
 
 const About = () => {
   return (
@@ -16,7 +17,7 @@ const About = () => {
       </div>
 
       {/* Minimal grid pattern overlay */}
-     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -84,10 +85,17 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <button className="group relative bg-cyan-700/30  hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2">
+              <a
+                href={resume}
+                download="Ramesh-Edirisinghe-CV-Jun-2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-cyan-700/30 hover:bg-slate-50 hover:text-black text-white px-6 py-3 rounded-lg font-medium text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10 flex items-center justify-center space-x-2"
+                aria-label="Download Resume"
+              >
                 <Download className="w-5 h-5 group-hover:animate-pulse" />
                 <span>Download Resume</span>
-              </button>
+              </a>
 
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -101,12 +109,11 @@ const About = () => {
 
           <div className="lg:col-span-5 flex flex-col items-center lg:items-end">
             <div className="relative flex flex-col items-center">
-              
-                <img
-                  src={profilePic}
-                  alt="Profile"
-                  className="w-44 h-44 sm:w-52 sm:h-52 rounded-md object-cover border border-gray-700/20 group-hover:border-cyan-500/20 transition-all duration-300"
-                />
+              <img
+                src={profilePic}
+                alt="Profile"
+                className="w-44 h-44 sm:w-52 sm:h-52 rounded-md object-cover border border-gray-700/20 group-hover:border-cyan-500/20 transition-all duration-300"
+              />
 
               <div className="flex space-x-3.5 mt-3.5">
                 <a
@@ -146,7 +153,6 @@ const About = () => {
                   </svg>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
