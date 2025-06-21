@@ -174,21 +174,21 @@ const Certificates = () => {
 
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">6+</div>
-            <div className="text-gray-300">Certifications</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">8+</div>
+            <div className="text-gray-300 uppercase tracking-wide font-semibold">Certifications</div>
           </div>
-          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">15+</div>
-            <div className="text-gray-300">Skills Validated</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">3+</div>
+            <div className="text-gray-300 uppercase tracking-wide font-semibold">Years of Experience</div>
           </div>
-          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">100%</div>
-            <div className="text-gray-300">Pass Rate</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">20+</div>
+            <div className="text-gray-300 uppercase tracking-wide font-semibold">Projects</div>
           </div>
-          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-4 hover:border-gray-400/50 transition-all duration-500">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-sky-300 to-slate-300 bg-clip-text text-transparent mb-2">2024</div>
-            <div className="text-gray-300">Recent Achievement</div>
+          <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 hover:border-gray-400/50 transition-all duration-500">
+            <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">1000+</div>
+            <div className="text-gray-300 uppercase tracking-wide font-semibold">GitHub Contributions</div>
           </div>
         </div>
       </div>
