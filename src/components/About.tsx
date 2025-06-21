@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden bg-gray-950"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden bg-black"
       aria-label="About Section"
     >
       {/* Subtle animated background elements */}
@@ -116,8 +116,9 @@ const About = () => {
                   className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
                   aria-label="GitHub Profile"
                 >
-                  <Github className="w-4.5 h-4.5 text-gray-300 hover:text-cyan-300" />
+                  <Github className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors" />
                 </a>
+
                 <a
                   href="https://www.linkedin.com/in/ramesh-edirisinghe/"
                   target="_blank"
@@ -125,8 +126,9 @@ const About = () => {
                   className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
                   aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-4.5 h-4.5 text-gray-300 hover:text-cyan-300" />
+                  <Linkedin className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors" />
                 </a>
+
                 <a
                   href="https://wa.me/qr/SFAUXWBPOKAYE1"
                   target="_blank"
@@ -134,9 +136,17 @@ const About = () => {
                   className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
                   aria-label="WhatsApp Contact"
                 >
-                  <Phone className="w-4.5 h-4.5 text-gray-300 hover:text-cyan-300" />
+                  <svg
+                    className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors"
+                    fill="currentColor"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M16.004 2.002c-7.732 0-14 6.268-14 14 0 2.469.646 4.873 1.872 6.987L2.005 30l7.206-1.875a13.93 13.93 0 006.793 1.729h.001c7.732 0 14-6.268 14-14s-6.268-14-14.001-14zm0 25.333a11.338 11.338 0 01-5.78-1.575l-.413-.244-4.278 1.114 1.138-4.171-.27-.427a11.345 11.345 0 01-1.752-6.039c0-6.26 5.092-11.351 11.352-11.351s11.352 5.091 11.352 11.351-5.092 11.342-11.352 11.342zm6.2-8.517c-.338-.169-1.993-.984-2.303-1.096-.308-.112-.533-.169-.758.17-.224.338-.87 1.096-1.067 1.322-.197.224-.393.252-.73.084-.338-.169-1.429-.527-2.723-1.681-1.006-.896-1.684-2.003-1.882-2.34-.197-.338-.021-.52.148-.688.152-.15.338-.393.507-.589.169-.197.225-.338.338-.563.112-.224.056-.422-.028-.59-.084-.169-.758-1.832-1.04-2.508-.272-.653-.548-.566-.758-.577l-.648-.011c-.224 0-.59.084-.898.42-.308.338-1.18 1.15-1.18 2.807 0 1.656 1.208 3.255 1.376 3.48.169.224 2.381 3.631 5.773 5.089.807.348 1.437.556 1.926.713.809.258 1.545.221 2.127.134.648-.096 1.993-.814 2.275-1.599.28-.784.28-1.456.197-1.599-.084-.141-.308-.224-.644-.393z" />
+                  </svg>
                 </a>
               </div>
+
             </div>
           </div>
         </div>
