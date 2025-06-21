@@ -8,12 +8,12 @@ const Footer = () => {
   const personalData = {
     firstName: 'Ramesh',
     fullName: 'Ramesh Edirisinghe',
-    location: 'Colombo, Sri Lanka',
-    email: 'ramesh.edirisinghe@email.com',
-    phone: '+94 77 123 4567',
+    location: 'Maharagama, Sri Lanka',
+    email: 'ranganathedirisingha@gmail.com',
+    phone: '+94 70 5787818',
     socialLinks: {
-      github: 'https://github.com/ramesh-edirisinghe',
-      linkedin: 'https://linkedin.com/in/ramesh-edirisinghe'
+      github: 'https://github.com/RameshEdirisinghe',
+      linkedin: 'https://linkedin.com/in/ramesh-edirisinghe/'
     }
   };
 
