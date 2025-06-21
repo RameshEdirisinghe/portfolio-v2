@@ -25,20 +25,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Email',
-      value: 'ramesh.edirisinghe@email.com',
-      link: 'mailto:ramesh.edirisinghe@email.com'
+      value: 'ranganathedirisingha@gmail.com',
+      link: 'mailto:ranganathedirisingha@gmail.com'
     },
     {
       icon: <Phone className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Phone',
-      value: '+94 77 123 4567',
-      link: 'tel:+94771234567'
+      value: '+94 70 5787818',
+      link: 'tel:+94705787818'
     },
     {
       icon: <MapPin className="w-5 h-5 text-gray-300 group-hover:scale-110 transition-transform" />,
       title: 'Location',
-      value: 'Colombo, Sri Lanka',
-      link: 'https://maps.google.com/?q=Colombo,Sri Lanka'
+      value: 'Maharagama, Sri Lanka',
+      link: 'https://maps.app.goo.gl/DXSkddkQ44vfeeop8'
     }
   ];
 
@@ -46,25 +46,25 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/ramesh-edirisinghe',
+      url: 'https://www.linkedin.com/in/ramesh-edirisinghe/',
       color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <Github className="w-5 h-5" />,
       name: 'GitHub',
-      url: 'https://github.com/ramesh-edirisinghe',
+      url: 'https://github.com/RameshEdirisinghe',
       color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <Twitter className="w-5 h-5" />,
       name: 'Twitter',
-      url: 'https://twitter.com/ramesh_dev',
+      url: 'https://x.com/RameshEdi',
       color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
       name: 'WhatsApp',
-      url: 'https://wa.me/94771234567',
+      url: 'https://wa.me/qr/SFAUXWBPOKAYE1',
       color: 'hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent'
     }
   ];
@@ -123,23 +123,28 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">Follow Me</h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 ${social.color} transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10`}
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+              <div>
+                <h4 className="text-lg font-semibold mb-4 text-white">Follow Me</h4>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 bg-gray-800/50 rounded-full border border-gray-700 text-gray-300 transition-all duration-300 transform hover:scale-110
+                        hover:bg-cyan-700/50 hover:border-cyan-700 hover:text-cyan-300`}
+                      title={social.name}
+                      aria-label={social.name}
+                    >
+                      {React.cloneElement(social.icon, {
+                        className: "w-5 h-5 transition-colors"
+                      })}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+
           </div>
 
           {/* Contact Form */}
