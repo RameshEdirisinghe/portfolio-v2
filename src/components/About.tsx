@@ -29,7 +29,6 @@ const About = () => {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-                <span className="block text-white">Hi, I'm</span>
                 <span className="block bg-gradient-to-r from-cyan-300 via-slate-600 to-slate-800 bg-clip-text text-transparent animate-gradient">
                   Ramesh Edirisinghe
                 </span>
