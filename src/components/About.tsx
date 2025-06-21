@@ -46,7 +46,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+            <div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group min-h-[4.5rem] w-full">
                 <div className="flex items-center space-x-2 h-full">
                   <div className="p-1 bg-gray-700/30 rounded group-hover:bg-cyan-700/30 transition-colors">
