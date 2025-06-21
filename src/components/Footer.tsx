@@ -38,7 +38,8 @@ const Footer = () => {
                 href={personalData.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                aria-label="GitHub Profile"
               >
                 <Github size={20} />
               </a>
@@ -46,13 +47,15 @@ const Footer = () => {
                 href={personalData.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href={`mailto:${personalData.email}`}
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
+                aria-label="Email Contact"
               >
                 <Mail size={20} />
               </a>
@@ -85,7 +88,7 @@ const Footer = () => {
             <div className="pt-4">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="group flex items-center space-x-2 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg px-4 py-2 text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
+                className="group flex items-center space-x-2 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg px-4 py-2 text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
               >
                 <span>Return to Top</span>
                 <ArrowUp className="w-4 h-4 group-hover:scale-110 transition-transform" />
