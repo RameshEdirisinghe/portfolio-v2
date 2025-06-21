@@ -46,9 +46,9 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group">
-                <div className="flex items-center space-x-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group min-h-[4.5rem] w-full">
+                <div className="flex items-center space-x-2 h-full">
                   <div className="p-1 bg-gray-700/30 rounded group-hover:bg-cyan-700/30 transition-colors">
                     <MapPin className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-gray-300 group-hover:text-cyan-300 transition-colors" />
                   </div>
@@ -59,8 +59,8 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group">
-                <div className="flex items-center space-x-2">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group min-h-[4.5rem] w-full">
+                <div className="flex items-center space-x-2 h-full">
                   <div className="p-1 bg-gray-700/30 rounded group-hover:bg-cyan-700/30 transition-colors">
                     <GraduationCap className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-gray-300 group-hover:text-cyan-300 transition-colors" />
                   </div>
@@ -71,8 +71,8 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group">
-                <div className="flex items-center space-x-2">
+              <div className="col-span-2 justify-self-center w-1/2 sm:w-full sm:col-span-1 bg-gray-900/50 backdrop-blur-sm border border-gray-800/30 rounded-lg p-2 sm:p-3 hover:border-cyan-600/30 hover:shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group min-h-[4.5rem]">
+                <div className="flex items-center space-x-2 h-full">
                   <div className="p-1 bg-gray-700/30 rounded group-hover:bg-cyan-700/30 transition-colors">
                     <Briefcase className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-gray-300 group-hover:text-cyan-300 transition-colors" />
                   </div>
@@ -120,31 +120,31 @@ const About = () => {
                   href="https://github.com/RameshEdirisinghe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
                   aria-label="GitHub Profile"
                 >
-                  <Github className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors" />
+                  <Github className="w-5 h-5" />
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/ramesh-edirisinghe/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
                   aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors" />
+                  <Linkedin className="w-5 h-5" />
                 </a>
 
                 <a
                   href="https://wa.me/qr/SFAUXWBPOKAYE1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800/50 rounded-full hover:bg-cyan-700/50 transition-all duration-300 hover:scale-110"
+                  className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
                   aria-label="WhatsApp Contact"
                 >
                   <svg
-                    className="w-5 h-5 text-gray-300 hover:text-cyan-300 transition-colors"
+                    className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg"
