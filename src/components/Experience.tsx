@@ -5,7 +5,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      position: 'Intern Software Engineer',
+      position: 'Associate Software Engineer',
       company: 'Residue Solutions',
       location: 'Colombo, Sri Lanka',
       duration: 'Jun 2025 - Present',
