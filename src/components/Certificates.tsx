@@ -10,7 +10,7 @@ import MT from '../assets/MT.png';
 import Express from '../assets/Express.png';
 import ReduxCert from '../assets/Redux.png';
 import Jakarta from '../assets/Jakarta.png';
-import pythonQuick from '../assets/python.png';
+import pythonQuick from '../assets/Python.png';
 import { useState, useEffect } from 'react'; // Added imports for state and effect
 
 const Certificates = () => {
