@@ -107,7 +107,7 @@ const Contact = () => {
         position="top-right"
         toastOptions={{
           style: {
-            background: '#1e1e1e',
+            background: '#0D0D1C',
             color: '#fff',
             border: '1px solid #333',
           },
