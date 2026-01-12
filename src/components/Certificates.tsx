@@ -284,7 +284,7 @@ const Certificates = () => {
             <div className="text-gray-300 uppercase tracking-wide font-semibold">Certifications</div>
           </div>
           <div className="text-center bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-2xl p-6 hover:border-gray-400/50 transition-all duration-500">
-            <div className="text-4xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">1200+</div>
+            <div className="text-4xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-400 to-slate-300 bg-clip-text text-transparent mb-3">1300+</div>
             <div className="text-gray-300 uppercase tracking-wide font-semibold">GitHub Contributions</div>
           </div>
         </div>
