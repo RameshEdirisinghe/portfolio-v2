@@ -1,6 +1,6 @@
 import { Download, MapPin, GraduationCap, Briefcase, ArrowRight, Sparkles, Github, Linkedin } from 'lucide-react';
 import profilePic from '../assets/myImg.jpg';
-import resume from '../assets/Ramesh-Edirisinghe-CV-Jun-2025.pdf';
+import resume from '../assets/Ramesh-Edirisinghe-CV-Jul-2025.pdf';
 
 const About = () => {
   return (
