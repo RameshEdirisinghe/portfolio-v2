@@ -5,21 +5,12 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      position: 'Intern Software Engineer',
+      position: 'Associate Software Engineer',
       company: 'Residue Solutions',
       location: 'Colombo, Sri Lanka',
-      duration: 'Jun 2025 - Present',
+      duration: 'May 2025 - Present',
       type: 'Full-time',
-      technologies: ['React', 'Node.js','Express js', 'Fire Base', 'MongoDB', 'AWS']
-    },
-    {
-      id: 2,
-      position: 'React Developer Intern',
-      company: 'Technocraft Solutions',
-      location: 'Kurunegala, Sri Lanka',
-      duration: 'May 2025 - Jun 2025',
-      type: 'Part-time',
-      technologies: ['React', 'Redux', 'Express js']
+      technologies: ['Nest Js', 'Flutter','Express js', 'Fire Base', 'MongoDB', 'AWS']
     },
     {
       id: 3,
