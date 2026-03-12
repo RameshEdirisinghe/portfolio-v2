@@ -79,10 +79,6 @@ const About = () => {
               <p className="mt-4 text-sm font-bold uppercase tracking-[0.25em] text-[var(--muted)] sm:text-base">
                 Full-Stack Engineer // Product-Focused Builder
               </p>
-              <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
-                I design and ship clean digital products across web, backend, cloud, and mobile
-                systems with a bias for clarity, speed, and practical engineering.
-              </p>
 
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
