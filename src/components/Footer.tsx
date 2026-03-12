@@ -1,120 +1,35 @@
-import React from 'react';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+
+const links = [
+  ['About', '#about'],
+  ['Projects', '#projects'],
+  ['Certificates', '#certificates'],
+  ['Contact', '#contact'],
+] as const;
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  // Mock data (to be updated by you)
-  const personalData = {
-    firstName: 'Ramesh',
-    fullName: 'Ramesh Edirisinghe',
-    location: 'Maharagama, Sri Lanka',
-    email: 'ranganathedirisingha@gmail.com',
-    phone: '+94 70 5787818',
-    socialLinks: {
-      github: 'https://github.com/RameshEdirisinghe',
-      linkedin: 'https://linkedin.com/in/ramesh-edirisinghe/'
-    }
-  };
+  const year = new Date().getFullYear();
+  const jump = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <footer className="relative bg-slate-950 border-t border-slate-800/50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto relative">
-        <div className="grid md:grid-cols-3 gap-8 mb-8 items-start">
-          {/* Left Column - Brand */}
-          <div className="space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="text-2xl font-bold text-white">
-              {personalData.firstName}
-              <span className="bg-gradient-to-r from-sky-800 to-slate-500 bg-clip-text text-transparent">.</span>
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
-              Final-year software engineering undergraduate with a passion for full-stack development, AI, and system design. Known for being hardworking, self-driven, and committed to building scalable, impactful digital solutions
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href={personalData.socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
-                aria-label="GitHub Profile"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href={personalData.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href={`mailto:${personalData.email}`}
-                className="p-3 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/10"
-                aria-label="Email Contact"
-              >
-                <Mail size={20} />
-              </a>
+    <footer className="relative z-10 border-t border-[rgba(22,26,23,0.08)] px-4 py-10 sm:px-6 lg:px-8">
+      <div className="section-inner">
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto_auto] lg:items-end">
+          <div>
+            <p className="section-kicker">Portfolio</p>
+            <h2 className="font-['Space_Grotesk'] text-3xl font-bold tracking-[-0.06em]">Building thoughtful software with a product mindset.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--muted)]">Open to engineering opportunities, freelance builds, and technically serious collaborations.</p><div className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)]"><MapPin size={16} className="text-[var(--accent-deep)]" />Maharagama, Sri Lanka</div>
+            <div className="mt-6 flex gap-3">
+              <a href="https://github.com/RameshEdirisinghe" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(22,26,23,0.08)] bg-white transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]" aria-label="GitHub"><Github size={18} /></a>
+              <a href="https://linkedin.com/in/ramesh-edirisinghe/" target="_blank" rel="noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(22,26,23,0.08)] bg-white transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]" aria-label="LinkedIn"><Linkedin size={18} /></a>
+              <a href="mailto:ranganathedirisingha@gmail.com" className="flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(22,26,23,0.08)] bg-white transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]" aria-label="Email"><Mail size={18} /></a>
             </div>
           </div>
-
-          {/* Middle Column - Quick Links */}
-          <div className="space-y-4 flex flex-col items-center md:items-center">
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <div className="space-y-2">
-              {['About', 'Skills', 'Projects', 'Certificates', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => {
-                    const element = document.querySelector(`#${item.toLowerCase()}`);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="block text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column - Contact Info */}
-          <div className="space-y-4 flex flex-col items-center md:items-end text-center md:text-right">
-            <div className="pt-4">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="group flex items-center space-x-2 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg px-4 py-2 text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
-              >
-                <span>Return to Top</span>
-                <ArrowUp className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              </button>
-            </div>
-          </div>
+          <div className="flex flex-col gap-3">{links.map(([label, href]) => <button key={label} onClick={() => jump(href)} className="text-left text-sm font-medium text-[var(--muted)] transition hover:text-[var(--ink)]">{label}</button>)}</div>
+          <div><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-deep)]">Back to top<ArrowUpRight size={16} /></button></div>
         </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-slate-800/50 pt-8 text-center">
-          <p className="text-gray-400 text-xs">
-            Â© {currentYear} {personalData.fullName}. All rights reserved.
-          </p>
-        </div>
+        <div className="mt-8 border-t border-[rgba(22,26,23,0.08)] pt-6 text-sm text-[var(--muted)]">© {year} Ramesh Edirisinghe. All rights reserved.</div>
       </div>
-
-      <style>{`
-        @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
     </footer>
   );
 };

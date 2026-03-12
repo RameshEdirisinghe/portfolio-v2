@@ -1,105 +1,90 @@
-import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+
+type NavItem = {
+  name: string;
+  href: string;
+};
+
+const navItems: NavItem[] = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
+  { name: 'Certificates', href: '#certificates' },
+  { name: 'Contact', href: '#contact' },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Certificates', href: '#certificates' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToSection = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
   };
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-black/95 backdrop-blur-xl shadow-lg shadow-white/10' : 'bg-transparent'
-      }`}
-    >
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+    <header className="relative z-50 px-3 pt-3 sm:px-4 lg:px-6">
+      <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between rounded-full border border-[rgba(22,26,23,0.08)] bg-[rgba(245,243,238,0.88)] px-4 py-3 shadow-[0_16px_30px_rgba(30,36,32,0.08)] backdrop-blur-xl sm:px-6">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center gap-3"
+          aria-label="Go to top"
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-sm font-bold text-white">
+            R
+          </span>
+          <span className="font-['Space_Grotesk'] text-lg font-bold tracking-[-0.04em]">
+            ramesh.
+          </span>
+        </button>
 
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="text-xl font-bold bg-gradient-to-r from-sky-500 to-slate-700 bg-clip-text text-transparent animate-gradient">
-            Ramesh.dev
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-800 to-slate-500 transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+        <nav className="hidden items-center gap-8 md:flex">
+          {navItems.map((item) => (
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              className="text-sm font-medium text-[var(--muted)] transition hover:text-[var(--ink)]"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {item.name}
             </button>
-          </div>
+          ))}
+        </nav>
+
+        <div className="hidden md:block">
+          <button
+            onClick={() => scrollToSection('#contact')}
+            className="rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-deep)]"
+          >
+            Let's Talk
+          </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-to-br from-slate-900/60 to-slate-900/20 backdrop-blur-xl border border-slate-800/50 rounded-lg mt-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:bg-gradient-to-r hover:from-sky-800 hover:to-slate-500 hover:bg-clip-text hover:text-transparent block w-full text-left px-3 py-2 rounded-md hover:bg-slate-800/50 transition-all duration-300"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+        <button
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(22,26,23,0.08)] bg-white/70 text-[var(--ink)] md:hidden"
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
 
-      <style>{`
-        @keyframes gradient {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
+      {isMenuOpen && (
+        <div className="mx-auto mt-3 max-w-6xl rounded-[28px] border border-[rgba(22,26,23,0.08)] bg-[rgba(245,243,238,0.94)] p-4 shadow-[0_16px_30px_rgba(30,36,32,0.08)] backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-1">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="rounded-2xl px-4 py-3 text-left text-sm font-medium text-[var(--muted)] transition hover:bg-white hover:text-[var(--ink)]"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 };
