@@ -1,4 +1,4 @@
-import aws from '../assets/icons8-aws-logo-48.png';
+import aws from '../assets/aws.png';
 import docker from '../assets/icons8-docker-48.png';
 import flutter from '../assets/icons8-flutter-48.png';
 import javaIcon from '../assets/icons8-java-48.png';
